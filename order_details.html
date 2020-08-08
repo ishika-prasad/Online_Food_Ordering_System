@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Order_details</title>
+</head>
+<body>
+<table id="order_details" style="width:100%">
+    {% if result %}
+    <tr>
+        <th>Order ID</th>
+        <th>Order status</th>
+        <th>Customer ID</th>
+        <th>Pay ID</th>
+        <th>Restaurant ID</th>
+        <th>Employee ID</th>
+    </tr>
+    {% for row in result %}
+    <tr>
+        <td> {{ row.orderID }}</td>
+        <td> {{ row.order_status }}</td>
+        <td> {{ row.cust_ID }}</td>
+        <td> {{ row.PayID }}</td>
+        <td> {{ row.restaurant_ID }}</td>
+        <td> {{ row.EmpID }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+</table>
+</body>
+</html>

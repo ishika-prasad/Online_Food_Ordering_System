@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+<table id="employee" style="width:100%">
+    {% if result %}
+    <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Year of Joining</th>
+        <th>Salary</th>
+        <th>Phone No.</th>
+        <th>User Name</th>
+        <th>Password</th>
+        <th>Restaurant ID</th>
+        <th>Order ID</th>
+    </tr>
+    {% for row in result %}
+    <tr>
+        <td> {{ row.emp_id }}</td>
+        <td> {{ row.first_name }}</td>
+        <td> {{ row.last_name }}</td>
+        <td> {{ row.Gender }}</td>
+        <td> {{ row.email }}</td>
+        <td> {{ row.joining_year}}</td>
+        <td> {{ row.Salary }}</td>
+        <td> {{ row.phone_no }}</td>
+        <td> {{ row.username }}</td>
+        <td> {{ row.Password }}</td>
+        <td> {{ row.restaurant_ID }}</td>
+        <td> {{ row.order_id }}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+</table>
+</body>
+</html>
